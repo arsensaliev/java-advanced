@@ -4,13 +4,13 @@ import java.util.*;
 
 public class Main {
   public static void main(String[] args) {
-    int capacity = 20;
-    List<String> stringList = addRandomString(capacity);
+    int capacity = 10;
+    ArrayList<String> stringList = addRandomString(capacity);
 
     uniqueStrings(stringList);
-  }
 
-  public static ArrayList addRandomString(int length) {
+  }
+  public static ArrayList<String> addRandomString(int length) {
     ArrayList<String> stringList = new ArrayList<>(length);
     int leftLimit = 97; // letter 'a'
     int rightLimit = 122; // letter 'z'
@@ -22,14 +22,20 @@ public class Main {
 
       stringList.add(generatedString);
     }
+    System.out.println(stringList);
     return stringList;
   }
 
-  public static void uniqueStrings(List<String> stringList) {
+  public static void uniqueStrings(ArrayList<String> stringList) {
 
     Set<String> uniqueAlpha = new TreeSet<>(stringList);
 
     System.out.println("Количество уникальных элементов: " + uniqueAlpha.size());
     System.out.println("Уникальные элементы: " + uniqueAlpha);
+
+    System.out.println("Частота встречаемости слов");
+    for (String key : uniqueAlpha) {
+      System.out.println(key + ": " + Collections.frequency(stringList, key));
+    }
   }
 }

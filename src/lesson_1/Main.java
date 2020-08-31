@@ -31,9 +31,9 @@ public class Main {
             int distanceJump = random.nextInt(maxDistanceJump) + 1;
 
             switch (random.nextInt(3)) {
-                case 0 -> listAction.add(new Cat("Cat " + number, distanceRun, distanceJump));
-                case 1 -> listAction.add(new Human("Human " + number, distanceRun, distanceJump));
-                case 2 -> listAction.add(new Robot("Robot " + number, distanceRun, distanceJump));
+//                case 0 -> listAction.add(new Cat("Cat " + number, distanceRun, distanceJump));
+//                case 1 -> listAction.add(new Human("Human " + number, distanceRun, distanceJump));
+//                case 2 -> listAction.add(new Robot("Robot " + number, distanceRun, distanceJump));
             }
         }
 

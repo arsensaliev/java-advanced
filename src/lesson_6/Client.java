@@ -31,11 +31,13 @@ public class Client {
                     try {
                         while (true) {
                             String str = in.readUTF();
+
                             if (str.equals("/end")) {
-                                System.out.println("Disconnected");
+                                System.out.println("Я вышел");
                                 break;
                             }
-                            out.writeUTF(str);
+
+                            System.out.println(str);
                         }
                     } catch (IOException e) {
                         e.printStackTrace();

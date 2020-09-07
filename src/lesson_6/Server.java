@@ -30,17 +30,20 @@ public class Server {
 
                         try {
                             String str = in.readUTF();
+
                             if (str.equals("/end")) {
+                                out.writeUTF("Disconnected");
                                 break;
                             }
 
-                            out.writeUTF(str);
+                            System.out.println(str);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
                 }
             }).start();
+
 
 
         } catch (IOException e) {

@@ -11,9 +11,16 @@ public class ClientMessage {
             @Override
             public void run() {
                 try {
-                    System.out.println("Введите сообщение: ");
-                    String answer = scanner.nextLine();
-                    out.writeUTF(answer);
+                    while (true) {
+                        System.out.println("Введите сообщение: ");
+                        String answer = scanner.nextLine();
+
+                        if (answer.equals("/end")) {
+                            out.writeUTF("Отсоединение Клиента");
+                            break;
+                        }
+                        out.writeUTF("Клиент: " + answer);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

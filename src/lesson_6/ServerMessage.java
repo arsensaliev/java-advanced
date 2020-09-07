@@ -11,9 +11,15 @@ public class ServerMessage {
             @Override
             public void run() {
                 try {
-                    System.out.println("Введите сообщение: ");
-                    String answer = scanner.nextLine();
-                    out.writeUTF(answer);
+                    while (true) {
+                        System.out.println("Введите сообщение: ");
+                        String answer = scanner.nextLine();
+                        if (answer.equals("/end")) {
+                            out.writeUTF("Отсоединение Сервера");
+                            break;
+                        }
+                        out.writeUTF("Сервер: " + answer);
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
